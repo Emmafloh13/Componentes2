@@ -1,0 +1,44 @@
+{
+    "nombreApp" : "Componentes 5a",
+    "iconApp" : "icon",
+    "rutas" : [
+        {
+            "ruta" : "alert",
+            "icon" : "add_alert",
+            "texto" : " Alertas",
+            "texto2": "Ventala con alertas"
+        },
+        {
+            "ruta" : "inputs",
+            "icon" : "input",
+            "texto" : "Entradas de datos",
+            "texto2": "Datos, datos"
+        },
+        {
+            "ruta" : "card",
+            "icon" : "folder_open",
+            "texto" : "Cards - Tarjetas",
+            "texto2": "Acceso a carpetas"
+        },
+        {
+            "ruta" : "firebase",
+            "icon" : "data",
+            "texto" : "Firbase Storage",
+            "texto2": "Firebase entrada"
+        },
+        {
+            "ruta" : "list",
+            "icon" : "list",
+            "texto" : "Listas y Scrolls",
+            "texto2":"scroll infinito"
+            
+        },
+        {
+            "ruta":"camara",
+            "icon": "camera",
+            "texto": "tomar",
+            "texto2": "Acceso a la camara"
+
+        }
+    ]
+}
