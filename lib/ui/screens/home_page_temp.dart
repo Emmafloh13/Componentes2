@@ -1,5 +1,7 @@
 import 'dart:js';
 import 'package:componentes2/providers/menu_providers.dart';
+import 'package:componentes2/ui/screens/alerts_screen.dart';
+import 'package:componentes2/utils/icons_mapping.dart';
 import 'package:flutter/material.dart';
 
 class HomePageTemp extends StatelessWidget {
@@ -25,31 +27,36 @@ Widget _lista() {
   });*/
   return FutureBuilder(
     future: menuProvider.loadData(), //indicando lo que queremos esperar
+    initialData: const [],
     builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
-      print('builder: ');
-      print(snapshot.data);
+      //print('builder: ');
+      //print(snapshot.data);
       return ListView(
-        children: _listaItems(snapshot.data as List<dynamic>),
+        children: _listaItems(snapshot.data as List<dynamic>, context),
       );
     },
   );
 }
 
-List<Widget> _listaItems(List<dynamic> data) {
+List<Widget> _listaItems(List<dynamic> data, BuildContext context) {
   final List<Widget> opciones = [];
+  final IconMapping iconMap = const IconMapping();
   data.forEach((opt) {
     final tile = ListTile(
       title: Text(opt['texto']),
-      leading: const Icon(
-        Icons.account_box,
-        color: Colors.blueAccent,
-      ),
+      leading: iconMap.getIcon(opt['icon']),
       trailing: const Icon(
         Icons.keyboard_arrow_right,
         color: Colors.blue,
       ),
       subtitle: Text(opt['texto2']),
-      onTap: () {},
+      onTap: () {
+        // final route = MaterialPageRoute(builder: (context) {
+        //   return AlertsScreen();
+        // });
+        Navigator.pushNamed(context, opt['ruta']);
+        //Navigator.push(context, route);
+      },
     );
     opciones
       ..add(tile)
