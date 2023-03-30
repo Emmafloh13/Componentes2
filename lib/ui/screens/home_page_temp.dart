@@ -47,7 +47,7 @@ List<Widget> _listaItems(List<dynamic> data, BuildContext context) {
       leading: iconMap.getIcon(opt['icon']),
       trailing: const Icon(
         Icons.keyboard_arrow_right,
-        color: Colors.blue,
+        color: Color.fromARGB(255, 8, 49, 162),
       ),
       subtitle: Text(opt['texto2']),
       onTap: () {
